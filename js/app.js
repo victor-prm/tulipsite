@@ -6,3 +6,11 @@ fetch("http://localhost:4000/hero")
         populateHeader(data);
         console.log(data);
     });
+
+
+fetch("http://localhost:4000/rooms")
+    .then(response => response.json())
+    .then(data => {
+        populateRooms(data);
+        console.log(data);
+    });
