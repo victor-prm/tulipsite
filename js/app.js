@@ -48,7 +48,7 @@ function populateHeader(d) {
                 <input type="date" name="" id="">
                 <input type="number" name="" id="">
                 <input type="number" name="" id="">
-                <input type="button" value="Book Now" class="button-large">
+                <input type="button" value="Book Now" class="button-large button-large--submit">
             </form>
         </div>
         

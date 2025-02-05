@@ -13,8 +13,8 @@
     --spacing-dbl: calc(var(--spacing-reg)*2);
     --spacing-hlf: calc(var(--spacing-reg)/2);
     --spacing-qtr: calc(var(--spacing-reg)/4);
-    --color-primary: blue;
-    --color-primary-dark: darkblue;
+    --color-primary: #0083CA;
+    --color-primary-dark: #0B0D17;
     --color-accent: #F47920;
     --tint-black-100: rgba(0, 0, 0, 0.1);
     --tint-black-200: rgba(0, 0, 0, 0.2);
@@ -55,7 +55,9 @@ button{
 input{
     border: none;
     border-radius: var(--spacing-qtr);
-    height: 100%;
+    height: 2.25rem;
+    padding: 0 1rem;
+    box-shadow: 0 var(--spacing-qtr) var(--spacing-qtr) var(--tint-black-200);
 }
 
 a,
@@ -143,13 +145,22 @@ button {
 
 .button-large{
     background-color: var(--color-accent);
-    padding: var(--spacing-reg) var(--spacing-dbl);
+    padding: var(--spacing-hlf) var(--spacing-dbl);
+    height: 2.25rem;
+}
+
+.button-large--submit{
+    color: white;
+    font-weight: bold;
 }
 
 .booking-form-container{
     padding: var(--spacing-dbl);
     max-width: var(--max-width-content);
-    background-color: blue;
+    background-color: var(--color-primary);
     position: relative;
     transform: translateY(-50%);
+    border-radius: var(--spacing-qtr);
+    box-shadow: var(--spacing-qtr) var(--spacing-qtr) var(--spacing-reg) var(--tint-black-200);
 }
+
