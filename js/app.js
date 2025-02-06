@@ -1,5 +1,16 @@
 let contentDiv = document.querySelector('.content-container');
 
+let headerSection = document.createElement("header");
+headerSection.classList.add("header");
+let mainSection = document.createElement("main");
+headerSection.classList.add("main");
+let footerSection = document.createElement("footer");
+headerSection.classList.add("footer");
+
+
+contentDiv.append(headerSection,mainSection,footerSection);
+
+
 fetch("http://localhost:4000/hero")
     .then(response => response.json())
     .then(data => {

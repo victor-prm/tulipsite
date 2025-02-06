@@ -1,9 +1,10 @@
-function highlight(str, wordAmt, cssModifier) {
+function highlight(str, wordAmt, cssModifier, largeLetters) {
     let modifier = ""
     if(cssModifier) modifier = `--${cssModifier}`;
     str = str.split(" ");
     let normalText = str.splice(wordAmt);
-    str = str.join(" ").toUpperCase();
+    str = str.join(" ");
+    if(largeLetters)str = str.toUpperCase();
     normalText = capitalizeFirstLetter(normalText.join(" "));
     let result = `<span class="highlight${modifier}">${str}</span> ${normalText}`
     return result;

@@ -1,7 +1,4 @@
 function populateHeader(d) {
-    let headerSection = document.createElement("header");
-    headerSection.classList.add("header");
-
     headerSection.innerHTML = `
         <div class="hero-content">
             ${createNavbar()}
@@ -10,7 +7,7 @@ function populateHeader(d) {
         <img src="${d.image}" alt="" class="hero-bg-image">
         ${createHeroBookingForm()}`
 
-    contentDiv.append(headerSection);
+    
 }
 
 function createHeroCTA(d){
@@ -19,7 +16,7 @@ function createHeroCTA(d){
                     <img src="./assets/tulip_logo.svg" alt="Company Logo" class="hero-logo">
                 </div>
                 <div class="hero-message-container">
-                    <h1 class="hero-message">${highlight(d.headline, 4, "hero")}</h1>
+                    <h1 class="hero-message">${highlight(d.headline, 4, "hero-message",true)}</h1>
                 </div>
                 <button class="button-large">Book Now</button>
             </div>`

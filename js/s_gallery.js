@@ -6,13 +6,13 @@ function populateGallery(d) {
 
     gallerySection.innerHTML = `
         <div class="gallery-text-container">
-            <h2>${d.headline}</h2>
+            <h2 class="section-headline">${highlight(d.headline,1,"section-headline")}</h2>
             <p>${d.text}</p> 
         </div>
         <div class="gallery-items-container">
             ${mapImages(d.images)}
         </div>`
-    contentDiv.append(gallerySection);
+    mainSection.append(gallerySection);
 }
 
 function mapImages(imgs){

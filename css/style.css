@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Lobster;
+    src: url(../fonts/Lobster-Regular-Static.ttf);
+  }
+
 *,
 *::before,
 *::after {
@@ -30,13 +35,19 @@
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     max-width: var(--max-width-page);
 
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
+    margin: 0 auto;
+}
+
+main{
+    max-width: var(--max-width-content);
+    padding: var(--spacing-dbl);
     margin: 0 auto;
 }
 
@@ -69,7 +80,7 @@ button {
 .content-container {
     background-color: white;
     width: 100%;
-    max-width: var(--max-width-content);
+   /*  max-width: var(--max-width-content); */
     margin: 0 auto;
 }
 
@@ -79,11 +90,16 @@ button {
     flex-direction: column;
     align-items: center;
     height: 50rem;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .hero-bg-image {
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
+    min-height: 40rem;
+    transform: translateY(-1%);
+    z-index: -1;
     object-fit: cover;
 }
 
@@ -138,12 +154,12 @@ button {
 .hero-message{
     color: white;
     text-shadow: 0px 4px var(--spacing-reg) var(--tint-black-700);
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
-.highlight--hero{
+.highlight--hero-message{
     display: block;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 .button-large{
@@ -165,6 +181,12 @@ button {
     transform: translateY(-50%);
     border-radius: var(--spacing-qtr);
     box-shadow: var(--spacing-qtr) var(--spacing-qtr) var(--spacing-reg) var(--tint-black-200);
+}
+
+.booking-form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .gallery, .gallery-text-container{
@@ -211,5 +233,27 @@ button {
     height: 100%;
     object-fit: cover;
   }
-  
 
+  .section-headline{
+    font-family: Lobster, Arial, serif;
+    font-size: 2.25rem;
+    color: var(--color-accent);
+  }
+
+  .highlight--section-headline{
+    color: var(--color-primary);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .nav-menu{
+        flex-direction: column;
+    }
+    .hero-message{
+        font-size: 2rem;
+    }
+    .hero-cta{
+        margin-top: 2rem;
+        justify-content: start;
+    }
+
+  }
