@@ -7,23 +7,21 @@ function populateHeader(d) {
         <img src="${d.image}" alt="" class="hero-bg-image">
         ${createHeroBookingForm()}`
 
-    
-}
-
-function createHeroCTA(d){
-    return `<div class="hero-cta">
+    //Parts
+    function createHeroCTA(d) {
+        return `<div class="hero-cta">
                 <div class="logo-container logo-container--hero">
                     <img src="./assets/tulip_logo.svg" alt="Company Logo" class="hero-logo">
                 </div>
                 <div class="hero-message-container">
-                    <h1 class="hero-message">${highlight(d.headline, 4, "hero-message",true)}</h1>
+                    <h1 class="hero-message">${highlight(d.headline, 4, "hero-message", true)}</h1>
                 </div>
                 <button class="button-large">Book Now</button>
             </div>`
-}
+    }
 
-function createNavbar() {
-    return `<nav class="nav-bar">
+    function createNavbar() {
+        return `<nav class="nav-bar">
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Home</a></li>
                     <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Rooms & Suites</a></li>
@@ -38,10 +36,10 @@ function createNavbar() {
                     <li class="nav-menu-item nav-menu-item--social"><a href="#" class="nav-menu-item-link nav-menu-item-link--social"><i class='fab fa-twitter'></i></a></li>
                 </ul>
             </nav>`
-}
+    }
 
-function createHeroBookingForm() {
-    return `<div class="booking-form-container">
+    function createHeroBookingForm() {
+        return `<div class="booking-form-container">
         <form class="booking-form">
             <input type="date" name="" id="">
             <input type="date" name="" id="">
@@ -50,7 +48,9 @@ function createHeroBookingForm() {
             <input type="button" value="Book Now" class="button-large button-large--submit">
         </form>
     </div>`
+    }
 }
+
 
 
 
