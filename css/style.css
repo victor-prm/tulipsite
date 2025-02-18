@@ -199,7 +199,7 @@ button {
 
 .booking-form {
     display: grid;
-    gap: 8px;
+    gap: var(--spacing-hlf);
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 }
@@ -284,6 +284,7 @@ button {
     border-radius: var(--spacing-hlf);
     display: flex;
     flex-direction: column;
+    box-shadow: var(--box-shadow);
 }
 
 .rooms-items-container {
@@ -387,12 +388,57 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-reg);
+    padding: var(--spacing-dbl) 0;
 }
 
 .services-item-headline {
     font-size: 2rem;
     font-weight: 500;
     color: var(--color-primary);
+}
+
+.services-item-img-container{
+    aspect-ratio: 2/1;
+    border-radius: var(--spacing-hlf);
+    overflow: hidden;
+}
+
+.services-item-img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.spots-items-container{
+    display: grid;
+    gap: var(--spacing-reg);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.spot-item{
+    display: grid;
+    gap: var(--spacing-reg);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-hlf);
+    border-radius: var(--spacing-hlf);
+}
+
+.spot-item-content-container{
+    display: grid;
+    gap: var(--spacing-hlf);
+}
+
+.spot-item-icon-container{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+
+    border-radius: 100%;
+  
 }
 
 @media only screen and (max-width: 45rem) {

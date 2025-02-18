@@ -1,7 +1,6 @@
 function populateServices(d) {
     let servicesSection = document.createElement("section");
     servicesSection.classList.add("services");
-    console.log(d.facilities[0])
 
     servicesSection.innerHTML = `
         ${sectionHeader(d)}
@@ -16,8 +15,6 @@ function populateServices(d) {
     }
 
     function createServiceCard(d, i){
-        
-
         return `<div class="services-item${modifyIfEven(i,"services-item-reverse")}">
                     <div class="services-item-content-container">
                         <h3 class="services-item-headline">${d.name}</h3>
@@ -25,7 +22,7 @@ function populateServices(d) {
                         <p class="services-item-copy">${d.text2}</p>
                     </div>
                     <div class="services-item-img-container">
-                        <img src="${d.image}" alt="" class="room-item-img">
+                        <img src="${d.image}" alt="" class="services-item-img">
                     </div>
                 </div>`
     }

@@ -18,8 +18,8 @@ function populateRooms(d) {
                     <div class="room-item-img-container">
                         <img src="${src}" alt="" class="room-item-img">
                         <div class="room-item-meta-info-container">
-                            ${roomMetaTag(pax,"fa fa-bed	")}
-                            ${roomMetaTag(sqm,"fa fa-square-o")}
+                            ${roomMetaTag(pax, "fa fa-bed")}
+                            ${roomMetaTag(sqm, "fa fa-square-o")}
                         </div>
                     </div>
                     <div class="room-item-content-container">
@@ -37,7 +37,7 @@ function populateRooms(d) {
                 </div>`
     }
 
-    function roomMetaTag(text,iconSrc) {
+    function roomMetaTag(text, iconSrc) {
         return `<div class="room-item-meta-info">
                     <i class="${iconSrc}"></i>
                     <p class class="room-item-meta-text">${text}</p>
