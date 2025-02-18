@@ -50,7 +50,8 @@ body {
     /* IE and Edge */
     scrollbar-width: none;
     margin: 0 auto;
-    color: var(--color-grey-med)
+    color: var(--color-grey-med);
+    font-weight: 300;
 }
 
 main {
@@ -196,21 +197,11 @@ button {
     box-shadow: var(--spacing-qtr) var(--spacing-qtr) var(--spacing-reg) var(--tint-black-200);
 }
 
-.booking-form>input[type="button"] {
-    grid-area: button;
-}
-
 .booking-form {
     display: grid;
     gap: 8px;
     width: 100%;
-    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
-
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "date1 date2 adults children button"
-        ". . . . button-alt";
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 }
 
 .gallery,
@@ -219,6 +210,7 @@ button {
     flex-direction: column;
     gap: var(--spacing-reg);
     align-items: center;
+    text-align: center;
 }
 
 .section-text-container {
@@ -361,7 +353,38 @@ button {
     color: white;
 }
 
-@media only screen and (max-width: 45px) {
+.services-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-dbl);
+}
+
+.services-item {
+    display: flex;
+    gap: var(--spacing-dbl);
+}
+
+.services-item > * {
+    flex: 1;
+}
+
+.services-item-reverse {
+    flex-direction: row-reverse;
+}
+
+.services-item-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-reg);
+}
+
+.services-item-headline {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+@media only screen and (max-width: 45rem) {
     .nav-menu {
         flex-direction: column;
     }
@@ -378,23 +401,13 @@ button {
     .rooms-items-container {
         grid-template-columns: auto;
     }
-
-    .booking-form>input[type="button"] {
-        grid-area: button-alt;
-    }
-
-    .booking-form {
-
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-            "adults children"
-            "date1 date2"
-            ". button-large--submit";
+    
+    .services-item{
+        flex-direction: column;
     }
 }
 
-@media only screen and (max-width: 36rem) {
+@media only screen and (max-width: 35rem) {
     .gallery-items-container {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;

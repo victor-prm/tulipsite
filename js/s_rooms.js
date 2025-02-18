@@ -1,7 +1,7 @@
 function populateRooms(d) {
     let roomsSection = document.createElement("section");
     roomsSection.classList.add("rooms");
-    console.log(d)
+
     roomsSection.innerHTML = `
         ${sectionHeader(d)}
         <div class="rooms-items-container">

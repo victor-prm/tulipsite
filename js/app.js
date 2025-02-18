@@ -8,7 +8,7 @@ let footerSection = document.createElement("footer");
 headerSection.classList.add("footer");
 
 
-contentDiv.append(headerSection,mainSection,footerSection);
+contentDiv.append(headerSection, mainSection, footerSection);
 
 
 fetch("http://localhost:4000/hero")
@@ -25,10 +25,18 @@ fetch("http://localhost:4000/rooms")
         //console.log(data);
     });
 
-    fetch("http://localhost:4000/gallery")
+fetch("http://localhost:4000/services")
+    .then(response => response.json())
+    .then(data => {
+        populateServices(data);
+        console.log(data);
+    });
+
+
+fetch("http://localhost:4000/gallery")
     .then(response => response.json())
     .then(data => {
         populateGallery(data);
-        console.log(data);
+        //console.log(data);
     });
 
