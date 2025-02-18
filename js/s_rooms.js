@@ -10,10 +10,10 @@ function populateRooms(d) {
     mainSection.append(roomsSection);
 
     function mapCards(rooms) {
-        return rooms.map((room) => createRoomsCard(room.image, room.type, room.price, room.guests, room.size)).join("");
+        return rooms.map((room) => createRoomsCard(room.image, room.type, room.price, room.guests, room.size, room.description)).join("");
     }
 
-    function createRoomsCard(src, type, price, pax, sqm) {
+    function createRoomsCard(src, type, price, pax, sqm, desc) {
         return `<div class="room-item">
                     <div class="room-item-img-container">
                         <img src="${src}" alt="" class="room-item-img">
@@ -23,16 +23,15 @@ function populateRooms(d) {
                         </div>
                     </div>
                     <div class="room-item-content-container">
-                        <div class="room-item-header">
-                            <h3 class="room-item-type">${type}</h3>
-                            <div class="room-item-price-tag">
-                                <p class="room-item-price-tag-value">$${price}</p>
+                        <div class="room-item-text">
+                            <div class="room-item-header">
+                                <h3 class="room-item-type">${type}</h3>
+                                <div class="room-item-price-tag">
+                                    <p class="room-item-price-tag-value">$${price}</p>
+                                </div>
                             </div>
+                            <p>${desc}</p>
                         </div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Ea impedit eos.
-                        </p>
                         <a href="#" class="room-item-booking-link">Booking <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>`

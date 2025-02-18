@@ -282,6 +282,8 @@ button {
     background: linear-gradient(0deg, rgba(0, 131, 202, 0.1) 0%, rgba(0, 131, 202, 0.5) 100%);
     padding: var(--spacing-hlf);
     border-radius: var(--spacing-hlf);
+    display: flex;
+    flex-direction: column;
 }
 
 .rooms-items-container {
@@ -327,11 +329,20 @@ button {
     gap: var(--spacing-qtr);
 }
 
-.room-item-content-container {
+.room-item-text{
     display: flex;
     flex-direction: column;
     gap: var(--spacing-reg);
+}
+
+.room-item-content-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    
+    gap: var(--spacing-dbl);
     padding: var(--spacing-reg) 0;
+    justify-content:space-between;
 }
 
 .room-item-booking-link {
@@ -401,7 +412,7 @@ button {
     .rooms-items-container {
         grid-template-columns: auto;
     }
-    
+
     .services-item{
         flex-direction: column;
     }
