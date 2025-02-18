@@ -42,7 +42,7 @@
 }
 
 body {
-    font-family: Roboto_Reg,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Roboto_Reg, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     max-width: var(--max-width-page);
 
     /* Hide scrollbar for IE, Edge and Firefox */
@@ -59,7 +59,7 @@ main {
     margin: 0 auto;
 }
 
-section{
+section {
     margin-bottom: 6rem;
 }
 
@@ -186,6 +186,7 @@ button {
 }
 
 .booking-form-container {
+    width: 100%;
     padding: var(--spacing-dbl);
     max-width: var(--max-width-content);
     background-color: var(--color-primary);
@@ -195,10 +196,21 @@ button {
     box-shadow: var(--spacing-qtr) var(--spacing-qtr) var(--spacing-reg) var(--tint-black-200);
 }
 
+.booking-form>input[type="button"] {
+    grid-area: button;
+}
+
 .booking-form {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 8px;
+    width: 100%;
+    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "date1 date2 adults children button"
+        ". . . . button-alt";
 }
 
 .gallery,
@@ -209,7 +221,7 @@ button {
     align-items: center;
 }
 
-.section-text-container{
+.section-text-container {
     margin-bottom: var(--spacing-dbl);
 }
 
@@ -318,7 +330,7 @@ button {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.66) 100%);
 }
 
-.room-item-meta-info{
+.room-item-meta-info {
     display: flex;
     gap: var(--spacing-qtr);
 }
@@ -330,26 +342,26 @@ button {
     padding: var(--spacing-reg) 0;
 }
 
-.room-item-booking-link{
+.room-item-booking-link {
     align-self: end;
     padding: 0 var(--spacing-qtr);
     font-weight: 600;
     color: var(--color-accent)
 }
 
-.room-item-type{
+.room-item-type {
     font-weight: 900;
     color: var(--color-primary-dark);
 }
 
-.room-item-price-tag-value{
+.room-item-price-tag-value {
     background-color: var(--color-primary);
     padding: var(--spacing-qtr);
     border-radius: var(--spacing-qtr);
     color: white;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 45px) {
     .nav-menu {
         flex-direction: column;
     }
@@ -367,4 +379,31 @@ button {
         grid-template-columns: auto;
     }
 
+    .booking-form>input[type="button"] {
+        grid-area: button-alt;
+    }
+
+    .booking-form {
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "adults children"
+            "date1 date2"
+            ". button-large--submit";
+    }
+}
+
+@media only screen and (max-width: 36rem) {
+    .gallery-items-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "top-right top-right"
+            "top-left bottom-right"
+            "top-left center-right"
+            "center center-right"
+            "bottom-left bottom-left"
+            "bottom-left bottom-left";
+    }
 }
